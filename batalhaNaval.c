@@ -1,10 +1,9 @@
-#include <stdio.h>
+    #include <stdio.h>
 
 // Desafio Batalha Naval - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
-int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
@@ -35,6 +34,43 @@ int main() {
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
+int main() {
+int agua = 0;
+int navio = 3;
 
-    return 0;
+int navio_tamanho = 3;
+int navio1_x = 2;
+int navio1_y = 2;
+int navio2_x = 5;
+int navio2_y = 5;
+
+int tabuleiro[10][10] = {
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+};
+
+for (int i = 0; i < navio_tamanho; i++) {
+tabuleiro[navio1_x][navio1_y + i] = navio;
+} 
+
+for (int i = 0; i < navio_tamanho; i++) {
+tabuleiro[navio2_x + i][navio2_y] = navio;
+} 
+
+printf("Tabuleiro (0 = Água / 3 = Navio)\n");
+for (int x = 0; x < 10; x++) {
+    for (int y = 0; y < 10; y++) {
+printf("%d ", tabuleiro[x][y]);
+}
+printf("\n");
+}
+return 0;
 }
